@@ -35,5 +35,6 @@ export interface SkillProps {
   attributeModifier: string;
   availableVal: number;
   val: number;
+  attributeModifierValues: AttributeValues;
   callback: (skillName: string, value: number) => void;
 }

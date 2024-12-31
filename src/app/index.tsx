@@ -101,6 +101,7 @@ const App = () => {
                   // This needs to be updated to reflect the max available value of the skill because of common attribute modifier value accross multiple skills
                   // availableVal={currentAttributes[skill.attributeModifier].skillPoints - currentSkills[skill.name]}
                   availableVal={currentAttributes[skill.attributeModifier].skillPoints - getUsedSkillValue(skill.attributeModifier)}
+                  attributeModifierValues={currentAttributes[skill.attributeModifier]}
                   callback={updateSkill}
                 />
               ))}
