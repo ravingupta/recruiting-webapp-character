@@ -10,7 +10,7 @@ const CategoryComponent = React.memo(({ categoryName, currentAttributes }: Categ
   useEffect(() => {
     let tempActive = true;
     Object.keys(CLASS_LIST[categoryName]).forEach((attribute) => {
-      if (CLASS_LIST[categoryName][attribute] > currentAttributes[attribute]) {
+      if (CLASS_LIST[categoryName][attribute] > currentAttributes[attribute].value) {
         tempActive = false;
       }
     });

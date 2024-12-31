@@ -1,33 +1,35 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 
 import { AttributeProps } from '../types';
 
-const AttributeComponent = React.memo(({attributeName, val, maxVal, callback}: AttributeProps) => {
+const AttributeComponent = React.memo(({attributeName, val, modifier, maxVal, callback}: AttributeProps) => {
   function updateValue(funcType: 'add' | 'sub') {
     if (funcType === 'add') {
         if (val === maxVal) {
-            return;
+          alert('You cannot go above the maximum allowed value');
+          return;
         }
         callback(attributeName, val + 1);
     } else {
         if (val === 0) {
-            return;
+          alert('You cannot go less than 0');
+          return;
         }
         callback(attributeName, val - 1);
     }
     return;
   }
 
-  const modifier = useMemo(() => {
-    return Math.floor((val - 10) / 2);
-  }, [val]);
+  // const modifier = useMemo(() => {
+  //   return Math.floor((val - 10) / 2);
+  // }, [val]);
 
   return (
     <div className="p-4 mb-2 bg-gray-100 flex justify-between items-center">
       <h4 className="text-lg font-semibold">
         {attributeName} - {val}
         <br />
-        <span className='text-sm text-gray-500'>Modifier: { modifier }</span>
+        <span className='text-sm text-gray-500'>Intelligence Modifier: { modifier }</span>
       </h4>
       <div>
         <button className='btn px-2 py-1 bg-blue-500 text-white' onClick={() => updateValue('add')}>+</button>

@@ -1,4 +1,4 @@
-import type { Attributes, Class } from "./types";
+import type { Attributes, AttributeValues, Class } from "./types";
 
 export const ATTRIBUTE_LIST = [
     'Strength',
@@ -55,5 +55,24 @@ export const SKILL_LIST = [
     { name: 'Sleight of Hand', attributeModifier: 'Dexterity' },
     { name: 'Stealth', attributeModifier: 'Dexterity' },
     { name: 'Survival', attributeModifier: 'Wisdom' },
+];
 
-]
+const tempAttributesDefault = {};
+
+ATTRIBUTE_LIST.forEach((attribute) => {
+    tempAttributesDefault[attribute] = {
+        value: 10,
+        modifier: 0,
+        skillPoints: 10,
+    };
+});
+
+export const ATTRIBUTES_DEFAULT: { [a: string]: AttributeValues } = { ...tempAttributesDefault };
+
+const tempSkillsDefault = {};
+
+SKILL_LIST.forEach((skill) => {
+    tempSkillsDefault[skill.name] = 0;
+});
+
+export const SKILLS_DEFAULT: { [a: string]: number } = { ...tempSkillsDefault };
