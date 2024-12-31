@@ -30,11 +30,11 @@ const CategoryComponent = React.memo(({ categoryName, currentAttributes }: Categ
     </div>
 
     {expanded && (
-      <div className="mt-4">
+      <div className="mt-4 p-4 bg-white text-center">
         <h5 className="text-md font-semibold">Minimum required</h5>
         {Object.keys(CLASS_LIST[categoryName]).map((attribute) => (
-          <div key={attribute} className="flex justify-between items-center p-4">
-            <h5 className="text-md font-semibold">{attribute}</h5>
+          <div key={attribute} className="flex justify-between items-center p-2">
+            <h5 className="text-md">{attribute}</h5>
             <span>{CLASS_LIST[categoryName][attribute]}</span>
           </div>
         ))}
