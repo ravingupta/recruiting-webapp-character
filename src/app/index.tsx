@@ -67,7 +67,7 @@ const App = () => {
                 <AttributeComponent 
                   key={attribute}
                   attributeName={attribute}
-                  maxVal={20}
+                  maxVal={70} // This should be updated to reflect the max value of the attribute - dummy value for now
                   val={currentAttributes[attribute].value}
                   modifier={currentAttributes[attribute].modifier}
                   callback={updateAttribute}
