@@ -44,3 +44,18 @@
     transform: rotate(360deg);
   }
 }
+
+.character-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.character-section > section {
+  border: #aeaeae solid 1px;
+}
+
+.attribute, .category, .skill {
+  padding: 1rem;
+  background-color: #aeaeae;
+}
